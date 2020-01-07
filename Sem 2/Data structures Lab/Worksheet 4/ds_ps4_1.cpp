@@ -1,32 +1,7 @@
 #include <iostream>
+#include "sparse_matrix.h"
 using namespace std;
 
-void transpose_sparse(int a[][3], int r, int c, int nz)
-{
-    int i, j, b[16][3], k = 1;
-    b[0][0] = c;
-    b[0][1] = r;
-    b[0][2] = nz;
-    for (i = 0; i < c; i++)
-    {
-        for (j = 1; j < nz; j++)
-        {
-            if (i == a[j][2])
-            {
-                b[k][0] = a[j][1];
-                b[k][1] = a[j][0];
-                b[k][2] = a[j][2];
-                k++;
-            }
-        }
-    }
-    for (i = 0; i < nz; i++)
-    {
-        for (j = 0; j < 3; j++)
-            cout << b[i][j];
-        cout << endl;
-    }
-}
 
 void triple_rep_sparse(int a[][10], int r, int c, int nz)
 {
