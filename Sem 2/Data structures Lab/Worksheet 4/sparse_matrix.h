@@ -1,5 +1,47 @@
-#include<iostream>
-
+#include <iostream>
+int *sparse_add(int **a, .int **b, int n1, int n2)
+{
+    int **c = new int *[10];
+    for (int i = 0; i < 10; i++)
+    {
+        c[i] = new int[3];
+    }
+    int k = 1, z = 1, j, i;
+    c[0][0] = a[0][0];
+    c[0][1] = a[0][1];
+    for (i = 1; i < (a[0][0]); i++)
+        for (j = 1; j < (n1 + n2); j++)
+        {
+            if (z == n2 - 1)
+                break;
+            else
+            {
+                if (a[i][0] == b[z][0] && a[i][1] == b[z][1])
+                {
+                    c[k][0] = a[i][0];
+                    c[k][1] = a[i][1];
+                    c[k][2] = a[i][2] + b[z][2];
+                    k++;
+                    z++;
+                }
+                else if (a[i][0] == b[z][0] && a[i][1] < b[z][i])
+                {
+                    c[k][0] = a[i][0];
+                    c[k][1] = a[i][1];
+                    c[k][2] = a[i][2];
+                    k++;
+                }
+                else
+                {
+                    c[k][0] = b[z][0];
+                    c[k][1] = b[z][1];
+                    c[k][2] = b[z][2];
+                    k++;
+                    z++;
+                }
+            }
+        }
+}
 void transpose_sparse(int a[][3], int r, int c, int nz)
 {
     int i, j, b[16][3], k = 1;
@@ -26,10 +68,7 @@ void transpose_sparse(int a[][3], int r, int c, int nz)
         cout << endl;
     }
 }
-int **sparse_add(int a[][3],int a[][3],int nz1,int nz2)
-{
 
-}
 int **triple_rep_sparse(int a[][10], int r, int c, int nz)
 {
     int i, j, k = 1;
@@ -54,11 +93,12 @@ int **triple_rep_sparse(int a[][10], int r, int c, int nz)
             }
         }
     }
-    for (i = 0; i < nz+1; i++)
+    for (i = 0; i < nz + 1; i++)
     {
         for (j = 0; j < 3; j++)
             cout << b[i][j] << "  ";
-        cout << endl << endl;
+        cout << endl
+             << endl;
     }
     return b;
 }
