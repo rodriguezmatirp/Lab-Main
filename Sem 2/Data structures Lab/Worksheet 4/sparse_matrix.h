@@ -1,4 +1,6 @@
 #include <iostream>
+using namespace std;
+
 int *sparse_add(int **a, .int **b, int n1, int n2)
 {
     int **c = new int *[10];
