@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css Practice</title>
+    <style>
+        body {
+            background-color: rgb(0, 116, 0);
+            padding: 80px;
+        }
+
+        .form {
+            background-color: black;
+        }
+
+        .float {
+            float: right;
+        }
+
+        div .text {
+            padding-right: 300px;
+            font-size: 40px;
+            font-weight: bolder;
+            padding-top: 20px;
+            color: green;
+        }
+
+        div .input {
+            padding-top: 100px;
+        }
+
+        input[type=text] {
+            padding-top: 30px;
+            box-sizing: border-box;
+            background-color: black;
+            color: orange;
+            border-style: none;
+            border: black;
+            border-bottom: solid 2px white;
+            font-size: 15px;
+            width: 100%;
+
+        }
+
+        input:focus {
+            background-color: black;
+        }
+
+        input[type=date] {
+            padding-top: 30px;
+            box-sizing: border-box;
+            background-color: black;
+            color: green;
+            border-style: none;
+            border: black;
+            border-bottom: solid 2px white;
+            width: 50%;
+            font-size: 15px;
+        }
+
+        ::placeholder {
+            color: green;
+        }
+
+        .prob {
+                width: 50%;
+        }
+
+        a{
+            background-color: green;
+            color: black;
+            padding: 5px;
+            border: solid 2px white;
+            text-decoration: none;
+            font-size: 20px;
+            opacity: 80%;
+        }
+
+        a:hover{
+            background-color: rgb(212, 255, 169);
+            transition-delay:0.2s;
+        }
+            
+    </style>
+</head>
+
+<body>
+    <div class="form"><img src="1.jpg" width="300px" height="650px">
+        <div class="float">
+            <div class="text" >
+                REGISTRATION INFO
+            </div>
+            <div class="input">
+                <input type="text" placeholder="Name">
+                <div><input type="date" placeholder="Birthdate">
+                    <div class="prob"><input type="text" placeholder="Gender"></div>
+                </div>
+                <input type="text" placeholder="Class">
+                <input type="text" placeholder="Registration Code"><br><br><br><br><br><br>
+                <a href="#">Search</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
