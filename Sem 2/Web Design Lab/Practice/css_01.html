@@ -13,7 +13,7 @@
         }
 
         .form {
-            background-color: black;
+            background-color: white;
         }
 
         .float {
@@ -21,8 +21,8 @@
         }
 
         div .text {
-            padding-right: 300px;
-            font-size: 40px;
+            padding-right: 500px;
+            font-size: 50px;
             font-weight: bolder;
             padding-top: 20px;
             color: green;
@@ -35,38 +35,35 @@
         input[type=text] {
             padding-top: 30px;
             box-sizing: border-box;
-            background-color: black;
+            background-color: white;
             color: orange;
+            text-transform: capitalize;
             border-style: none;
             border: black;
-            border-bottom: solid 2px white;
+            border-bottom: solid 2px black;
             font-size: 15px;
             width: 100%;
 
         }
 
         input:focus {
-            background-color: black;
+            background-color: white;
         }
 
         input[type=date] {
             padding-top: 30px;
             box-sizing: border-box;
-            background-color: black;
+            background-color: white;
             color: green;
             border-style: none;
             border: black;
-            border-bottom: solid 2px white;
-            width: 50%;
+            border-bottom: solid 2px black;
+            width: 40%;
             font-size: 15px;
         }
 
         ::placeholder {
             color: green;
-        }
-
-        .prob {
-                width: 50%;
         }
 
         a{
@@ -83,24 +80,36 @@
             background-color: rgb(212, 255, 169);
             transition-delay:0.2s;
         }
+
+        #link{
+            padding-left:400px ;
+        }
+
+        #link1{
+            width: 50%;
+        }
+
+        input[type=date]::before{
+            color:green;
+            content: attr(placeholder) ;
+        }
             
     </style>
 </head>
 
 <body>
-    <div class="form"><img src="1.jpg" width="300px" height="650px">
+    <div class="form"><img src="1 (2).png" width="300px" height="650px">
         <div class="float">
             <div class="text" >
                 REGISTRATION INFO
             </div>
             <div class="input">
                 <input type="text" placeholder="Name">
-                <div><input type="date" placeholder="Birthdate">
-                    <div class="prob"><input type="text" placeholder="Gender"></div>
-                </div>
+                <input type="date" placeholder="Birthdate --  ">
+                    <div id="link1"><input type="text" placeholder="Gender"></div>
                 <input type="text" placeholder="Class">
                 <input type="text" placeholder="Registration Code"><br><br><br><br><br><br>
-                <a href="#">Search</a>
+                <div id="link"><a href="#">Search</a></div>
             </div>
         </div>
     </div>
