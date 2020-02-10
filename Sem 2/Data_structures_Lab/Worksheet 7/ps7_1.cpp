@@ -113,19 +113,19 @@ bool Linkedlist::delete_(bool choice)
 
 void Linkedlist::display()
 {
-    if (head_ == NULL)
-        cout << "NO DATA";
+    Node *t = head_;
+    if (t == NULL)
+        cout << "NO DATA\n\n\n";
     else
     {
-        Node *t = head_;
         while (t->link_ != NULL)
         {
             cout << t->data_ << endl;
             t = t->link_;
         }
         cout << t->data_ << endl;
-        delete t;
     }
+    delete t;
 }
 
 int main()
@@ -134,6 +134,7 @@ int main()
 line:
     cout << "1) Insert a new node at beggining of the list\n2) Insert a new node after a node\n3) Insert a new node at the end of the list\n4) Delete the first node of the list\n5) Delete an existing node after a node with element to be given\n6) Delete the last node of the list\n7) Display the elements of the list\n\n";
     cout << "Enter a valid choice";
+    cin >> choice;
     Linkedlist Nodes;
     switch (choice)
     {
