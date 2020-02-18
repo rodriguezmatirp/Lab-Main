@@ -4,10 +4,10 @@ using namespace std;
 class Linkedlist
 {
     Node *head_;
+    Linkedlist *list_;
 
 public:
     Linkedlist() { head_ = NULL; }
-    Linkedlist(Linkedlist const &obj) { head_ = obj.head_; }
     bool append(int element);
     Linkedlist operator+(Linkedlist const &obj); //concate
     bool freeall();
@@ -24,6 +24,7 @@ public:
     int listcount();
     bool movenode(int n);
     bool insertlast(int element);
+    bool secondcopy(Linkedlist *list);
 };
 
 class Node
@@ -40,6 +41,23 @@ public:
         link_ = NULL;
     }
 };
+
+bool Linkedlist::secondcopy(Linkedlist *list)
+{
+    Node *t = list->head_;
+    if (t == NULL)
+        return false;
+    else
+    {
+        while (t != NULL)
+        {
+            insertlast(t->data_);
+            t = t->link_;
+        }
+        free(t);
+        return true;
+    }
+}
 
 bool Linkedlist::insertlast(int element)
 {
@@ -73,10 +91,10 @@ Linkedlist Linkedlist ::operator+(Linkedlist const &obj)
         t = t->link_;
     }
     t->link_ = obj.head_;
-    while( t!= NULL)
+    while (t != NULL)
     {
         newlist.insertlast(t->data_);
-        t=t->link_;
+        t = t->link_;
     }
     free(t);
     return newlist;
@@ -86,7 +104,7 @@ int Linkedlist::listcount()
 {
     Node *t = head_;
     int count;
-    while(t!=NULL)
+    while (t != NULL)
     {
         count++;
         t = t->link_;
@@ -98,7 +116,7 @@ int Linkedlist::listcount()
 bool Linkedlist::freeall()
 {
     int count = listcount();
-    for(int i=0;i<count;i++)
+    for (int i = 0; i < count; i++)
     {
         Node *t = head_;
         head_ = t->link_;
@@ -109,5 +127,59 @@ bool Linkedlist::freeall()
 
 Linkedlist Linkedlist::reverse()
 {
-    
+    Node *prev = NULL;
+    Node *link_ = NULL;
+    Node *current = head_;
+    Linkedlist list;
+    while (current != NULL)
+    {
+        link_ = current->link_;
+        current->link_ = prev;
+        prev = current;
+        current = current->link_;
+    }
+    head_ = prev;
+    list.secondcopy(list_);
+    return list;
+}
+
+bool Linkedlist::deletelast()
+{
+    Node *t = head_;
+    if (head_ == NULL)
+        return false;
+    else if (t->link_ == NULL)
+    {
+        free(t);
+        head_ = NULL;
+        return true
+    }
+    else
+    {
+        while (t->link_->link_ != NULL)
+            t = t->link_;
+        Node *s = t->link_;
+        t->link_ = NULL;
+        free(s);
+        return true;
+    }
+}
+
+bool Linkedlist::delete_(int n)
+{
+    if (n > listcount())
+        return false;
+    else
+    {
+        int i = 0;
+        Node *t = head_;
+        while (i <= n)
+        {
+            i++;
+            t = t->link_;
+        }
+        t->link_ = t->link_->link_;
+        free(t->link_);
+        return true;
+    }
 }
