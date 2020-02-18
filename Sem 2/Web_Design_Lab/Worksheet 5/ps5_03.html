@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var principle = document.getElementById("p").value;
+    var Rate = document.getElementById("r").value;
+    var Time = document.getElementById("t").value;
+    function SI() {
+        var si = principle * Time * Rate / 100;
+        document.getElementById("Simple").innerHTML = Math.round(si);
+    }
+    function CI() {
+        var ci = principle * Math.pow(1 + (Rate / 100)) - 1;
+        document.getElementById("Compound").innerHTML = Math.round(ci);
+    }
+</script>
+
+<body>
+    <form id="form">
+        Principle <input id = "p"><br><br>
+        Rate of Interest <input id = "r"><br><br>
+        Time(in years) <input id = "t"><br><br><br>
+    </form>
+    <input type="button" onclick="SI()" value="Simple Interest"><br><br>
+    <p id="Simple"></p>
+    <input type="button" onclick="CI()" value="Compound Interest"><br><br>
+    <p id="Compound"></p>
+
+</body>
+
+</html>

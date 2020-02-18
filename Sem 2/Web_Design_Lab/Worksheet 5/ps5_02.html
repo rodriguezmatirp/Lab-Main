@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function ToFarenheit() {
+        var x;
+        x = document.getElementById("c").value * 9 / 5 + 32;
+        document.getElementById("f").value = x;
+    }
+    function toCelcius() {
+        var x;
+        x = (document.getElementById("f").value - 32) * 5 / 9;
+        document.getElementById("c").value = x;
+    }
+</script>
+
+<body>
+    <p>Celsius <input id="c" onkeyup="ToFarenheit()" value="0"></p>
+    <p>Farenheit <input id="f" onkeyup="toCelcius()" value="0"></p>
+</body>
+
+</html>
