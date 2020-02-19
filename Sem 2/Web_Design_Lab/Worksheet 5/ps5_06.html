@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function sum() {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        return a + b;
+    }
+    function difference() {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        return a - b;
+    }
+    function product() {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        return a * b;
+    }
+    function quotient() {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        return Math.round(a / b);
+    }
+    document.getElementById("sum").innerHTML = sum();
+    document.getElementById("diff").innerHTML = difference();
+    document.getElementById("pro").innerHTML = product();
+    document.getElementById("quo").innerHTML = quotient();
+
+
+</script>
+
+<body>
+    a : <input id="a"><br>
+    b : <input id="b"><br>
+    <input type="button" value="Sum" onclick="sum()"><br>
+    <p id="sum"></p>
+    <input type="button" value="Difference" onclick="difference()"><br>
+    <p id="diff"></p>
+    <input type="button" value="Product" onclick="product()"><br>
+    <p id="pro"></p>
+    <input type="button" value="Quotient" onclick="quotient()"><br>
+    <p id="quo"></p>
+</body>
+
+</html>

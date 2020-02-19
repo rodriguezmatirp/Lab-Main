@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function area()
+    {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        var c = document.getElementById("c").value;
+        var s = (Number(a) + Number(b) + Number(c))/2;
+        var result = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        document.getElementById("area").innerHTML = result.toFixed(2);
+    }
+</script>
+<body>
+    a : <input id="a" type="number"><br>
+    b : <input id="b" type="number"><br>
+    c : <input id="c" type="number"><br><br>
+    <input type="button" value="Calculate Area" onclick="area()">
+    <p id="area"></p>
+</body>
+
+</html>

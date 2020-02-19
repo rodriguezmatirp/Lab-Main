@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function distance()
+    {
+        var x1 = document.getElementById("x1").value;
+        var x2 = document.getElementById("x2").value;
+        var y1 = document.getElementById("y1").value;
+        var y2 = document.getElementById("y2").value;
+        var distance;
+        distance = Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
+        result = document.getElementById("result");
+        result.innerHTML = distance.toFixed(2);
+    }
+</script>
+<body>
+    x1 : <input id = "x1"><br>
+    y1 : <input id = "y1"><br>
+    x2 : <input id = "x2"><br>
+    y2 : <input id = "y2"><br><br>
+    <input type="button" value="Calculate Distance" onclick="distance()">
+    <p id ="result"></p>
+</body>
+
+</html>
