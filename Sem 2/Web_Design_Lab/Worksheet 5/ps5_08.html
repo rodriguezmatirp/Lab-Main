@@ -9,20 +9,28 @@
 </head>
 <script>
     function calcuate() {
+        var pos = 0, neg = 0, zer = 0;
         var form = document.getElementById("form");
         for (var i = 0; i < 3; i++) {
-            if (form.elements)
+            if (form.elements[i].value > 0)
+                pos++;
+            else if (form.elements[i].value < 0)
+                neg++;
+            else
+                zer++;
         }
+        document.getElementById("p").innerHTML = "Positive : " + pos + "<br>Negative : " + neg + "<br>Zeros : " + zer;
     }
 </script>
 
 <body>
     <form id="form">
-        a : <input id="a"><br>
-        b : <input id="b"><br>
-        c : <input id="c"><br>
+        a : <input><br>
+        b : <input><br>
+        c : <input><br>
     </form>
     <input type="button" onclick="calcuate()" value="Calculate">
+    <p id="p"></p>
 </body>
 
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    function calculate()
+    {
+        var a = document.getElementById("a").value;
+        var b = document.getElementById("b").value;
+        if(b%a == 0)
+        document.getElementById("p").innerHTML = "b is a multiple of a<br>";
+        else
+        document.getElementById("p").innerHTML = "b ias not a multiple of a";
+    }
+</script>
+
+<body>
+    a : <input id="a"><br>
+    b : <input id="b"><br>
+    <input type="button" value="Check" onclick="calculate()">
+    <p id = "p"></p>
+</body>
+
+</html>

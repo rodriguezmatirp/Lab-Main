@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="mytable">
+        <th>Number</th>
+        <th>Square</th>
+        <th>Cube</th>
+    </table>
+    <script>
+        var data, color, node, row;
+        var table = document.getElementById("mytable");
+        for (var i = 0; i < 11; i++) {
+            row = document.createElement("tr");
+            for (var j = 0; j < 3; j++) {
+                data = document.createElement("td");
+                node = document.createTextNode(Math.pow(i, j + 1));
+                data.appendChild(node);
+                row.appendChild(data);
+            }
+            table.appendChild(row);
+        }
+        console.log(table);
+    </script>
+
+
+</body>
+
+</html>
