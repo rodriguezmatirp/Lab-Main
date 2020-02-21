@@ -184,4 +184,58 @@ bool Linkedlist::delete_(int n)
     }
 }
 
+Linkedlist Linkedlist ::operator*(Linkedlist const &obj)
+{
+    Node *t1 = head_;
+    Node *t2 = obj.head_;
+    Linkedlist list;
+    if (t1 == NULL && t2 == NULL)
+    {
+        cout << "No elements in both the lists";
+        return NULL;
+    }
+    else
+    {
+        Node *t3 = list.head_;
+        while (t1 != NULL && t2 != NULL)
+        {
+            if (t1->data_ > t2->data_)
+            {
+                t3->data_ = t2->data_;
+                t1 = t1->link_;
+            }
+            else if (t1->data_ < t2->data_)
+            {
+                t3->data_ = t2->data_;
+                t1 = t1->link_;
+            }
+            t3->link_ = new Node;
+        }
+        if (t1 ! = NULL)
+        {
+            while (t1 != NULL)
+            {
+                t3->data_ = t1->data_;
+                t3->link_ = new Node;
+                t1 = t1->link_;
+            }
+        }
+        if (t2 != NULL)
+        {
+            while (t2 ! = NULL)
+            {
+                t3->data_ = t1->data_;
+                t3->link_ = new Node;
+                t2 = t2->link_;
+            }
+       }
+       t3->link_ = NULL;
+       return list;
+    }
+}
 
+Linkedlist Linkedlist ::operator&(Linkedlist const &bj)
+{
+    Linkedlist list;
+    
+}
