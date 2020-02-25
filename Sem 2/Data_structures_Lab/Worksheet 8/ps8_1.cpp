@@ -90,7 +90,7 @@ Linkedlist Linkedlist ::operator+(Linkedlist const &obj)
         newlist.insertlast(t->data_);
         t = t->link_;
     }
-    t->link_ = obj.head_;
+    t = obj.head_;
     while (t != NULL)
     {
         newlist.insertlast(t->data_);
@@ -152,7 +152,7 @@ bool Linkedlist::deletelast()
     {
         free(t);
         head_ = NULL;
-        return true
+        return true;
     }
     else
     {
@@ -192,7 +192,7 @@ Linkedlist Linkedlist ::operator*(Linkedlist const &obj)
     if (t1 == NULL && t2 == NULL)
     {
         cout << "No elements in both the lists";
-        return NULL;
+        return list;
     }
     else
     {
@@ -211,7 +211,7 @@ Linkedlist Linkedlist ::operator*(Linkedlist const &obj)
             }
             t3->link_ = new Node;
         }
-        if (t1 ! = NULL)
+        if (t1 != NULL)
         {
             while (t1 != NULL)
             {
@@ -222,20 +222,23 @@ Linkedlist Linkedlist ::operator*(Linkedlist const &obj)
         }
         if (t2 != NULL)
         {
-            while (t2 ! = NULL)
+            while (t2 != NULL)
             {
                 t3->data_ = t1->data_;
                 t3->link_ = new Node;
                 t2 = t2->link_;
             }
-       }
-       t3->link_ = NULL;
-       return list;
+        }
+        t3->link_ = NULL;
+        return list;
     }
 }
 
 Linkedlist Linkedlist ::operator&(Linkedlist const &bj)
 {
     Linkedlist list;
-    
+    list = list + bj;
+
+
+
 }
