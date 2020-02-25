@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <br>The String : <input type="text" id="str">
+    Enter substring to search for : <input type="text" id="substring"><br><br>
+    Enter the index : <input type="number" id="index"><br>
+    <input type="button" value="Search" onclick="search()"><br><br>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <script>
+        function search() {
+            var str = document.getElementById("str").value;
+            var substr = document.getElementById("substring").value;
+            var ind = document.getElementsByClassName("index").value;
+            var index1 = str.indexOf(substr);
+            var index2 = str.lastIndexOf(substr);
+            if (index1 = -1)
+                document.getElementById("result1").innerHTML = "Substring Not found";
+            else {
+                document.getElementById("result1").innerHTML = "First occurance located at index" + index1;
+                document.getElementById("result2").innerHTML = "Last occurance located at index" + index2;
+                var index3 = str.indexOf(substr, ind);
+                var index4 = str.lastIndexOf(substr, ind);
+                if (index3 = -1)
+                    document.getElementById("result3").innerHTML = "Substring Not found from index" + ind;
+                else
+                    document.getElementById("result3").innerHTML = "Substring found from index " + ind + "at index " + index4;
+                if (index4 = -1)
+                    document.getElementById("result4").innerHTML = "Substring Not found from index" + ind;
+                else
+                    document.getElementById("result4").innerHTML = "Substring found from index " + ind + "at index " + index4;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
