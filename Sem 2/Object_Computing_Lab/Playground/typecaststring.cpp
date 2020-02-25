@@ -1,5 +1,5 @@
 #include <bits\stdc++.h>
-#include<string>
+#include <string>
 using namespace std;
 
 class Convert
@@ -15,7 +15,7 @@ public:
         Country = 0;
         Line_num = 0;
     }
-    Convert(const string);
+    Convert(string);
     void Display();
 };
 
@@ -25,16 +25,22 @@ void Convert ::Display()
     cout << "Country_code : " << Country << endl;
     cout << "Line_num : " << Line_num << endl;
 }
-Convert ::Convert(const string Phone)
+Convert ::Convert(string Phone)
 {
+    string Area;
+    Area = Phone;
     stringstream ss(Phone);
-    ss>>Country;
+    ss >> Country;
+    int i = 0;
+    while (Phone[i] != '-')
+        i++;
+    Area = replace(i, Phone.length, Phone);
 }
 
 int main()
 {
     string phone;
-    getline(cin,phone);
+    getline(cin, phone);
     Convert Num = phone;
     Num.Display();
 
