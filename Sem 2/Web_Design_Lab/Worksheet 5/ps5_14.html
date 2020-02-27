@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="mytable">
+        <tr>
+            <th>Value</th>
+            <th>Function(Math)</th>
+            <th>Return Value</th>
+        </tr>
+    </table>
+    <script>
+        var tab = document.getElementById("mytable");
+        var val, rval, count = 0;
+        var math = [
+            "Math.round()",
+            "Math.pow()",
+            "Math.sqrt()",
+            "Math.abs()"
+        ]
+        function insert(val) {
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            var node = document.createTextNode(val);
+            td.appendChild(node);
+            row.appendChild(td);
+        }
+        do {
+            prompt("Enter a Value : ", val);
+            insert(val);
+            insert(math[count]);
+            
+            count++;
+
+        } while (val = -1);
+
+
+    </script>
+</body>
+
+</html>
