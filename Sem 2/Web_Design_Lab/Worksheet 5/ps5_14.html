@@ -31,17 +31,30 @@
             var node = document.createTextNode(val);
             td.appendChild(node);
             row.appendChild(td);
+            tab.appendChild(row);
+
         }
-        do {
-            prompt("Enter a Value : ", val);
+        function mathfunc(choice, val) {
+            if (choice == 0)
+                return Math.round(val);
+            else if (choice == 1) {
+                var pow = prompt("Enter the Pow : ");
+                return Math.pow(val, pow);
+            }
+            else if (choice == 2)
+                return Math.sqrt(val);
+            else
+                return Math.abs(val);
+        }
+        for (let i = 0; i < 4; i++) {
+            var val = prompt("Enter a Value : ");
             insert(val);
             insert(math[count]);
-            
-            count++;
-
-        } while (val = -1);
-
-
+            var value = mathfunc(count, val);
+            console.log(value);
+            insert(value);
+            count = count + 1;
+        }
     </script>
 </body>
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table id="mytable">
+        <tr>
+            <th>Product Number</th>
+            <th>Quantity</th>
+            <th>Total Value</th>
+        </tr>
+    </table>
+    <script>
+        var tab = document.getElementById("mytable");
+        function insert(prod,quan){
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            var node = document.createTextNode(prod);
+            td.appendChild(node);
+            row.appendChild(td);
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            var node = document.createTextNode(quan);
+            td.appendChild(node);
+            row.appendChild(td);
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            if(prod==1)
+            var node = document.createTextNode("$" + quan*2.98);
+            else if(prod ==2)
+            var node = document.createTextNode("$" + quan*4.5);
+            else if(prod ==3)
+            var node = document.createTextNode("$" + quan*9.98);
+            else if(prod ==4)
+            var node = document.createTextNode("$" + quan*4.49);
+            else
+            var node = document.createTextNode("$" + quan*6.87);
+            td.appendChild(node);
+            row.appendChild(td);
+            tab.appendChild(row);
+        }
+        var count =0 ;
+        var prod = new Array(20);
+        var quan = new Array(20);
+        do{
+            prod[count] = prompt("Enter the product number : ");
+            if(prod>5)
+            alert("Enter the valid product Number");
+            else{
+                quan[count] = prompt("Enter the quantity : ");
+                insert(prod[count],quan[count]);
+                count = count + 1 ; 
+            }
+        }while(prod!=-1)
+    </script>
+</body>
+</html>
