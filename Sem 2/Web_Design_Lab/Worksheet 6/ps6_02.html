@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myform">
+        x1 : <input type="number" required><br>
+        y1 : <input type="number" required><br>
+        x2 : <input type="number" required><br>
+        y2 : <input type="number" required><br><br>
+        <input type="button" value="Calculate" onclick="compute()"><br>
+        <p id="mypara"></p>
+    </form>
+    <script>
+        function compute() {
+            var form = document.getElementById("myform");
+            var x1 = form.elements[0].value;
+            var y1 = form.elements[1].value;
+            var x2 = form.elements[2].value;
+            var y2 = form.elements[3].value;
+            document.getElementById("mypara").innerHTML = "Distance   : " + Math.sqrt(parseInt(parseInt(Math.pow(x1 - x2, 2)) + parseInt(Math.pow(y1 - y2, 2))));
+        }
+    </script>
+</body>
+
+</html>
