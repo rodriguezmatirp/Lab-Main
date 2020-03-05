@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var array = new Array(4);
+        var num = prompt("Enter the Number to be encrypted : ");
+        for (let i = 0; i < 4; i++) {
+            array[i] = parseInt(Math.abs((num % Math.pow(10,4-i))/Math.pow(10,3-i)));
+            console.log(array[i]);
+            array[i] = (array[i] +7)%10; 
+       }
+       var temp;
+       temp = array[1];
+       array[1] = array[3];
+       array[3] = temp;
+       var temp1;
+       temp1 = array[2];
+       array[2] = array[0];
+       array[0] = temp1;
+       alert("Encrypted Number : " + array[0]+array[1]+array[2]+array[3]);
+       document.write("Encrypted Number : " + array[0]+array[1]+array[2]+array[3]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="mytable">
+        <tr>
+            <th>No. of Hours</th>
+            <th>Gross Pay</th>
+            <th>Employee</th>
+        </tr>
+    </table>
+    <script>
+        var tab = document.getElementById("mytable");
+        function insert(hours, gross, count) {
+            var row = document.createElement("tr");
+            var td = document.createElement("td");
+            var node1 = document.createTextNode(hours);
+            td.appendChild(node1);
+            row.appendChild(td);
+            var td = document.createElement("td");
+            var node2 = document.createTextNode(gross);
+            td.appendChild(node2);
+            row.appendChild(td);
+            var td = document.createElement("td");
+            var node3 = document.createTextNode(parseInt(count + 1));
+            td.appendChild(node3);
+            row.appendChild(td);
+            tab.appendChild(row);
+        }
+        var hours = new Array(10);
+        var count = 0;
+        var gross = new Array(10);
+        do{
+            hours[count] = prompt("No. of hours of Employee : " + parseInt(count + 1));
+            if (hours[count] > 40)
+                gross[count] = parseInt(3 * (hours[count] / 2) - 20);
+            else
+                gross[count] = parseInt(hours[count]);
+            insert(hours[count], gross[count], count);
+            count = count + 1;
+        }while(hours[count-1] != -1)
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Node
@@ -69,9 +69,40 @@ void Linkedlist ::Display()
     }
 }
 
-bool Linkedlist :: removeDupes()
+bool Linkedlist ::removeDupes()
 {
-    
+    Node *t = head_;
+    if (head_ == NULL)
+        return 0;
+    else
+    {
+        int temp;
+        Node *h = t->next_;
+        Node *tempn = NULL;
+        Node *del = NULL;
+        while (t->next_ != NULL)
+        {
+            while (h->next_ != NULL)
+            {
+                if (t->data_ > h->data_)
+                {
+                    temp = t->data_;
+                    t->data_ = h->data_;
+                    h->data_ = temp;
+                }
+                else if(t->data_ == h->data_)
+                {
+                    tempn->next_ = h->next_;
+                    h->next_ = NULL;
+                    del = h;
+                    delete del;          
+                }
+                tempn = h;
+                h = h->next_;
+            }
+            t = t->next_;
+        }
+    }
 }
 
 int main()
