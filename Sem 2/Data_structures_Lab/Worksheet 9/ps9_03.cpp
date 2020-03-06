@@ -1,21 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Linkedlist
-{
-    Node* head_;
-    int length;
-    public:
-    Linkedlist(){head_ = NULL;}
-    bool addNode(int);
-    void Display();
-};
-
 class Node
 {
     int data_;
     Node *next_;
     friend class Linkedlist;
+
 public:
     Node()
     {
@@ -29,6 +20,17 @@ public:
     }
 };
 
+class Linkedlist
+{
+    Node *head_;
+    int length;
+
+public:
+    Linkedlist() { head_ = NULL; }
+    bool addNode(int);
+    void Display();
+    bool alternatesplit();
+};
 
 bool Linkedlist ::addNode(int data)
 {
@@ -64,4 +66,46 @@ void Linkedlist ::Display()
         }
         cout << t->data_ << endl;
     }
+}
+
+bool Linkedlist ::alternatesplit()
+{
+    if (head_ == NULL)
+        return false;
+    Linkedlist list1, list2;
+    Node *t = head_;
+    Node *t1 = list1.head_;
+    Node *t2 = list2.head_;
+    int count = 0;
+    while (t->next_ != NULL)
+    {
+        if (!(count % 2))
+            list1.addNode(t->data_);
+        else
+            list2.addNode(t->data_);
+        count++;
+        t = t->next_;
+    }
+    if (!count % 2)
+        list1.addNode(t->data_);
+    else
+        list2.addNode(t->data_);
+    cout << "List 1 : " << endl;
+    list1.Display();
+    cout << "List 2 : " << endl;
+    list2.Display();
+    delete t1, t2, t;
+    return true;
+}
+
+int main()
+{
+    Linkedlist list;
+    list.addNode(4);
+    list.addNode(5);
+    list.addNode(7);
+    list.addNode(0);
+    list.addNode(8);
+    list.alternatesplit();
+    return 0;
 }
