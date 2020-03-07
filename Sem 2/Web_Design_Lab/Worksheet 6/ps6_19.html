@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="start" value="Start" onclick="start()">
+    <input type="button" id="stop" value="Stop" onclick="stop()">
+    <input type="button" id="reset" value="Reset" onclick="reset()">
+    <p id="result"></p>
+    <script>
+        var sec = 0;
+        var min = 0;
+        var hour = 0;
+        function start() {
+            if (sec > 60)
+                min = min + 1;
+            else if (min > 60)
+                hour = hour + 1;
+            document.getElementById("result").innerHTML = hour + " : " + min + " : " + sec;
+            sec = sec + 1;
+            setTimeout(start, 1000);
+        }
+    </script>
+</body>
+
+</html>
