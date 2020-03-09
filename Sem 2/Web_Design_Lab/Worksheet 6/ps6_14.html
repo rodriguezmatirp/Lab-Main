@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         table {
+            border: 3px solid black;
+        }
+
+        td {
+            height: 2px;
+            width: 2px;
+        }
+
+        button {
+            height: 35px;
+            width: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="mytable" cellspacing="0px">
+    </table>
+    <button onclick="colour(1)"></button>
+    <button onclick="colour(2)"></button>
+    <button onclick="colour(3)"></button>
+    <button onclick="colour(4)"></button>
+    <button onclick="colour(5)"></button>
+    <button onclick="colour(6)"></button>
+    <button onclick="colour(7)"></button>
+    <button onclick="colour(8)"></button>
+
+    <script>
+        var color = ["red", "blue", "violet", "grey", "yellow", "black", "orange","white"];
+        var butt = document.getElementsByTagName("button");
+        for (let i = 0; i < 8; i++)
+            butt[i].style.backgroundColor = color[i];
+        var tab, row, node, dat, number;
+        var check;
+        up = () => {
+            check = false;
+        }
+        down = () => {
+            check = true;
+        }
+        colour = num => {
+            number = num;
+        }
+        move = () => {
+            if (check)
+                event.target.style.backgroundColor = color[number - 1];
+        }
+        tab = document.getElementById("mytable");
+        for (i = 0; i < 200; i++) {
+            row = document.createElement("tr");
+            for (j = 0; j < 400; j++) {
+                dat = document.createElement("td");
+                dat.addEventListener("mouseup", up);
+                dat.addEventListener("mousedown", down);
+                dat.addEventListener("mousemove", move);
+                node = document.createTextNode(" ");
+                dat.appendChild(node);
+                row.appendChild(dat);
+            }
+            tab.appendChild(row);
+        }
+        
+    </script>
+</body>
+
+</html>
