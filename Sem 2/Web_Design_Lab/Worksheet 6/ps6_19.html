@@ -14,18 +14,38 @@
     <input type="button" id="reset" value="Reset" onclick="reset()">
     <p id="result"></p>
     <script>
+        var time;
         var sec = 0;
         var min = 0;
         var hour = 0;
         function start() {
-            if (sec > 60)
+            if (sec > 59) {
+                sec = 0;
                 min = min + 1;
-            else if (min > 60)
+            }
+            else if (min > 59) {
                 hour = hour + 1;
-            document.getElementById("result").innerHTML = hour + " : " + min + " : " + sec;
+                min = 0;
+            }
+            document.getElementById("result").innerHTML = checktime(hour) + " : " + checktime(min) + " : " + checktime(sec);
             sec = sec + 1;
-            setTimeout(start, 1000);
+            time = setTimeout(start, 1000);
         }
+        function stop() {
+            clearTimeout(time);
+        }
+        function reset() {
+            sec = 0;
+            hour = 0;
+            min = 0;
+            document.getElementsById("result").innerHTML = checktime(hour) + " : " + checktime(min) + " : " + checktime(sec);
+        }
+        function checktime(get){
+            if(get>=0 && get <10)
+            return "0" + get;
+        }
+
+
     </script>
 </body>
 
