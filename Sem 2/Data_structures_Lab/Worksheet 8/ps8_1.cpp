@@ -234,10 +234,10 @@ Linkedlist Linkedlist ::operator*(Linkedlist const &obj)
     }
 }
 
-Linkedlist Linkedlist ::operator&(Linkedlist const &bj)
+Linkedlist Linkedlist ::operator&(Linkedlist const &obj)
 {
     Linkedlist list;
-    list = list + bj;
+    list = list + obj;
 
 
 
