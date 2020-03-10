@@ -20,7 +20,7 @@ class BST
 
 public:
     BST() : root_(NULL) {}
-    Node* Delete(int);
+    Node *Delete(int);
     Node *Insert(int);
     Node *Insert(int, Node *&);
     void Inorder()
@@ -91,7 +91,7 @@ Node *BST ::Insert(int data, Node *&root)
     if (root == NULL)
     {
         root = new Node(data);
-        cout << "Successful " << count + 1 << endl;
+        cout << "Successfully added : " << data << "count : " << count + 1 << endl;
         count++;
     }
     else if (root->data_ < data)
@@ -101,9 +101,8 @@ Node *BST ::Insert(int data, Node *&root)
     return root;
 }
 
-Node* BST :: Delete(int data)
+Node *BST ::Delete(int data)
 {
-
 }
 
 int main()
