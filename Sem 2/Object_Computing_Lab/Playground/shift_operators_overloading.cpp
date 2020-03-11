@@ -13,7 +13,7 @@ public:
         x = 0;
         y = 0;
     };
-    point(int a, int b, const string  name_)
+    point(int a, int b, const string name_)
     {
         x = a;
         y = b;
