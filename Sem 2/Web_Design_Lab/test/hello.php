@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html>
-<body>
+<!-- <html>     <body> <form method="get" > Name: <input type="number" name="number"> <input type="submit" value="odd or even"> </form>
+<?php if ($_GET) { // collect value of input field
+$no = $_GET['number']; 
+if (empty($no)) {                echo "Empty, Try once again!";     } 
+else {            if (($no%2)==0) {         echo $no." is Even!";     } 
+else {         echo $no." is Odd"; } }
+} ?> </body> </html> -->
+<!-- 
+<html> <body> <form method="post" > Name: <input type="number" name="number"> <input type="submit" value="odd or even"> 
+</form> <?php if ($_POST) { // collect value of input field 
+$no = $_POST['number']; if (empty($no)) { echo "Empty, Try once again!"; } 
+else { if (($no%2)==0) { echo $no." is Even!";    } 
+else {      echo $no." is Odd"; } } } ?> </body> </html>
 
- <?php
-// $x = "abc";
-// $$x = 50;
-// echo "My first PHP script!";
-// echo "$x<br>";
-// echo $$x;
-// var_dump($x);
-// var_dump($$x);
-// echo "<br>";
-$cars = array("volvo,bmw,benz");
-echo $cars[0]."arrcar 1";
-// var_dump($cars); 
+ -->
 
-$x = "hello world";
-$x = NULL;
-var_dump($x);
-?>
+ <html>
+     <body>
+         <?php
+            $cars = array("bmw","volvo","benz");
+            echo $cars[0] . $cars[1];
 
-</body>
-</html
+         ?>
+     </body>
+ </html>
