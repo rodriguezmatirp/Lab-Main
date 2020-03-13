@@ -26,10 +26,10 @@ class Linkedlist
     int length;
 
 public:
-    Linkedlist() { head_ = NULL; }
+    Linkedlist() { head_ = NULL;length = 0; }
     bool addNode(int);
     void Display();
-    bool shuffleMerge();
+    Linkedlist operator+(Linkedlist &); //shuffle merge
 };
 
 bool Linkedlist ::addNode(int data)
@@ -55,7 +55,7 @@ bool Linkedlist ::addNode(int data)
 void Linkedlist ::Display()
 {
     Node *t = head_;
-    if (head_ = NULL)
+    if (head_ == NULL)
         cout << "No Data\n";
     else
     {
@@ -68,7 +68,47 @@ void Linkedlist ::Display()
     }
 }
 
-bool Linkedlist::shuffleMerge()
+Linkedlist Linkedlist ::operator+(Linkedlist &obj)
 {
-    
+    Linkedlist list;
+    Node *t = NULL;
+    Node *t1 = this->head_;
+    Node *t2 = obj.head_;
+    while (t1!= NULL && t2!= NULL)
+    {
+        cout<<"count";
+        if (list.length % 2)
+        {
+            list.addNode(t1->data_);
+            t1 = t1->next_;
+        }
+        else
+        {
+            list.addNode(t2->data_);
+            t2 = t2->next_;
+        }
+    }
+    cout<<"count1";
+    t = (t1 == NULL) ? t2 : t1;
+    while (t!= NULL)
+    {
+        list.addNode(t->data_);
+        t = t->next_;
+    }
+    return list;
+}
+
+int main()
+{
+    Linkedlist list1, list2, list;
+    list1.addNode(2);
+    list1.addNode(4);
+    list1.addNode(9);
+    list2.addNode(5);
+    list2.addNode(4);
+    list2.addNode(8);
+
+    list = list1 + list2;
+    list.Display();
+    return 0;
 }

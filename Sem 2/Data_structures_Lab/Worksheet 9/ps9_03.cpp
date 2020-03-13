@@ -55,16 +55,15 @@ bool Linkedlist ::addNode(int data)
 void Linkedlist ::Display()
 {
     Node *t = head_;
-    if (head_ = NULL)
+    if (head_ == NULL)
         cout << "No Data\n";
     else
     {
-        while (t->next_ != NULL)
+        while (t!= NULL)
         {
             cout << t->data_ << "\n";
             t = t->next_;
         }
-        cout << t->data_ << endl;
     }
 }
 
