@@ -12,8 +12,8 @@ int main()
     obj.Insert(45);
     obj.Insert(11);
     obj.Inorder();
-    cout<<"MAX : "<<obj.find_min();
-    cout<<"MIN : "<<obj.find_max();
+    cout<<"MAX : "<<obj.find_max()<<endl;
+    cout<<"MIN : "<<obj.find_min()<<endl;
     obj.Display_div(5);
     
     // obj.Postorder();
