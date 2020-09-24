@@ -116,6 +116,7 @@ int main()
     Time t;
     Time t1(3, 45, 50);
     Time t2(4, 43, 27);
+    Time t3;
     t = t1 + t2;
     t.printTime();
     if (t1 < t2)

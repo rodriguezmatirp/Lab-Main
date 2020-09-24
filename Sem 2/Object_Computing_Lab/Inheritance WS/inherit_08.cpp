@@ -42,7 +42,7 @@ int main()
 {
     Painting *p = new Painting;
     p->get_data();
-    if(p->artist_name == "Monet")
+    if(p->artist_name == "Monet" || "monet")
     {
         FamousPainting *f = new FamousPainting(p->title_,p->artist_name);
         p = f;

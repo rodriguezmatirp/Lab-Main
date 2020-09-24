@@ -53,5 +53,7 @@ int main()
 {
     HouseThatIsAnInvestment H(20,3000,"Dindigul,Tamil Nadu",2000.58);
     H.display();
+    House* house = &H;
+    house->display();
     return 0;
 }

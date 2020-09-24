@@ -59,6 +59,11 @@ void NationalAnthem ::display()
 int main()
 {
     NationalAnthem india("jana gana","Rabindranath",1951,"India");
+    // india.display();
+    MusicalComposition* mc = &india;
+    mc->setData();
+    mc->display();
     india.display();
+
     return 0;
 }

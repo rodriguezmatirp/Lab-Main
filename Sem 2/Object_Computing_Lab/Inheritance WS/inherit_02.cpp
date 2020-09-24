@@ -1,11 +1,12 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 class Book
-{  
+{
     string author;
     string title;
-    public : 
+
+public:
     void setdata();
     void displaydata();
 };
@@ -13,7 +14,8 @@ class Book
 class Fiction : public Book
 {
     float NGRL;
-    public:
+
+public:
     void setdata();
     void displaydata();
 };
@@ -21,50 +23,50 @@ class Fiction : public Book
 class N_Fiction : public Book
 {
     int pages;
-    public : 
+
+public:
     void setdata();
     void displaydata();
 };
 
-void Book :: setdata()
+void Book ::setdata()
 {
     cin.sync();
-    cout<<"Title : ";
-    cin>>title;
+    cout << "Title : ";
+    cin >> title;
     cin.sync();
-    cout<<"Author : ";
-    cin>>author;
+    cout << "Author : ";
+    cin >> author;
 }
 
 void Book ::displaydata()
 {
-    cout<<"Title : "<<title<<endl;
-    cout<<"Author : "<<author<<endl;
+    cout << "Title : " << title << endl;
+    cout << "Author : " << author << endl;
 }
 
 void Fiction::setdata()
 {
     Book::setdata();
-    cout<<"Numeric Grade Reading Level : ";
-    cin>>NGRL;
+    cout << "Numeric Grade Reading Level : ";
+    cin >> NGRL;
 }
 
 void Fiction::displaydata()
 {
     Book::displaydata();
-    cout<<"Numeric Grade Reading Level : "<<NGRL<<endl;
+    cout << "Numeric Grade Reading Level : " << NGRL << endl;
 }
 
 void N_Fiction::setdata()
 {
     Book::setdata();
-    cout<<"Pages - Count : ";
-    cin>>pages;
+    cout << "Pages - Count : ";
+    cin >> pages;
 }
 
 void N_Fiction::displaydata()
 {
     Book::displaydata();
-    cout<<"Pages Count : "<<pages<<endl;
+    cout << "Pages Count : " << pages << endl;
 }
-
