@@ -34,9 +34,11 @@ int main()
     while (1)
     {
         int data;
+        cin >> data;
         if (data != -1)
             tree.Insert(data);
-        break;
+        if (data == -1)
+            break;
     }
 
     //Can return count directly as it is Static Member of BST class
