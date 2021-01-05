@@ -82,9 +82,15 @@ int main()
     return 0;
 }
 
+// int main()
+// {
+//     string sortOrder, input;
+//     cin >> sortOrder >> input;
 
-// sort(t.begin(),t.end(), [s](char a,char b){
-//         size_t index1 = s.find(a);
-//         size_t index2 = s.find(b);
-//         return index1 < index2;
+//     sort(input.begin(), input.end(), [sortOrder](char a, char b) {
+//         return sortOrder.find(a) < sortOrder.find(b);
 //     });
+
+//     cout << "Sorted String : " << input << endl;
+//     return 0;
+// }

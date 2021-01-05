@@ -12,9 +12,7 @@ void merge(vector<int>& B,vector<int>& C,vector<int>& A){
         if(B[i] <= C[j]){
             A[k++] = B[i++];
         }
-        else{
-            A[k++] = C[j++];
-        }
+         A[k++] = C[j++];
     }
 
     while(i < B.size()){

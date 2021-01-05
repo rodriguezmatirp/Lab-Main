@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-
 int partition(int arr[],int start, int end){
     
     int pivot = arr[start];
@@ -52,8 +51,8 @@ bool binarySearch(int arr[],int start,int end,int key){
     return false;
 }
 
-int main(){
-
+int main()
+{
     int arr[] = {2,7,5,9,15};
     int n = sizeof(arr)/sizeof(arr[0]);
     quickSort(arr,0,n);
