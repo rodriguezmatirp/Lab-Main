@@ -31,7 +31,7 @@ if __name__ == '__main__':
             print(" ".join(word_now))
         
         if '_' not in word_now :
-            print('Won!')
+            print('Won :)')
             break
 
     print('Game Over!')

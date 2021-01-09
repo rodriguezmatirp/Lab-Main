@@ -2,7 +2,10 @@ def maximum(input_list):
     if len(input_list) == 1:
         return input_list[0]
     else:
-        return maximum([max(input_list)])
+        value_now = maximum(input_list[1:])
+        if input_list[0] > value_now:
+            return value_now
+        return max_value
 
 if __name__ == '__main__':
     input_list = list(input('Enter the list : ').split())
