@@ -5,5 +5,5 @@ if __name__ == "__main__":
     sentences = []
     for line in lines:
         words = line.split(':')[1].split()
-        sentences.append([line.split(":")[0],words])
+        sentences.append([line.split(":")[0],words.sort()])
     print(sentences)
