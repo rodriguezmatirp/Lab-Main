@@ -5,7 +5,6 @@ def execute_command(variables,expression):
         print('Value not defined')
         return 
 
-
 if __name__ == '__main__':
     print('Enter the command - ')
     variables = {}

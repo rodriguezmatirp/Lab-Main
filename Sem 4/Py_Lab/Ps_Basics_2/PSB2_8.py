@@ -1,5 +1,5 @@
 def intersection(set_1,set_2):
-    return set(set_1).intersection(set_2)
+    return list(set(set_1) & set(set_2)) 
 
 def union(set_1,set_2):
     return set(set_1).union(set_2)
