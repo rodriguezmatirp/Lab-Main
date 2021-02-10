@@ -6,4 +6,4 @@ if __name__ == '__main__' :
     list_1 = list(sentence_1.split())
     sentence_2 = input('Enter list 2 : ')
     list_2 = list(sentence_2.split())
-    print(interestion(list_1,list_2))    
+    print(intersection(list_1, list_2))

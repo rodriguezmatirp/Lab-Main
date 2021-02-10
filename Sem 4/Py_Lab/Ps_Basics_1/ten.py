@@ -10,7 +10,7 @@ if __name__ == '__main__':
     print('Enter the elements : ')
     for x in range(length) :
         input_list.append(input())
-    if has22(array) :
+    if has22(input_list) :
         print('True')
     else:
         print('False')

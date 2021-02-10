@@ -10,8 +10,8 @@ if __name__ == "__main__":
             if word not in word_list:
                 word_list.append(word)
     word_list.sort()
-    print(sentences)
-    print(word_list)
+    # print(sentences)
+    # print(word_list)
 
     result = {x:[] for x in word_list }
     for x in word_list:

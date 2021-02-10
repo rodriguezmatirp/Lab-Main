@@ -1,0 +1,2 @@
+Jul 11 16:11:51:490 [139681125603136] dut: Device State: ON
+Jul 11 16:11:51:490 [139681125603136] dut: Device State: OFF
