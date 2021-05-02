@@ -9,7 +9,7 @@ int main()
 
     char *wc_args[] = {"wc", NULL};
     char *grep_args[] = {"grep", "--binary-files=text", "-i", "hai", NULL};
-    char *cat_args[] = {"cat","file.txt",NULL};
+    char *cat_args[] = {"cat", "file.txt", NULL};
 
     pipe(fd1);
     pipe(fd2);
@@ -40,7 +40,7 @@ int main()
         close(fd2[0]);
 
         int pid2 = fork();
-        if (pid2 < 0) 
+        if (pid2 < 0)
             perror("Child creation failed !");
         else if (pid2 == 0)
         {

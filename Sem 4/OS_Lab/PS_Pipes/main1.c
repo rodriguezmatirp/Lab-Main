@@ -19,7 +19,7 @@ int main()
     else if (pid == 0)
     {
         close(fd1[0]);
-        dup2(fd1[1],1);
+        dup2(fd1[1], 1);
         close(fd1[1]);
         execvp(*cat_args, cat_args);
     }
@@ -27,8 +27,8 @@ int main()
     {
         wait(NULL);
         char buffer[100];
-        read(fd1[0],buffer,99);
-        
+        read(fd1[0], buffer, 99);
+
         pipe(fd2);
 
         pid = fork();
@@ -56,7 +56,7 @@ int main()
             dup2(fd2[0], 0);
             close(fd2[0]);
 
-            write(fd1[1],buffer,99);
+            write(fd1[1], buffer, 99);
             close(fd1[1]);
 
             wait(NULL);

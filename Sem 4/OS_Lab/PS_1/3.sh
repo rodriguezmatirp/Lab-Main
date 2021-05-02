@@ -32,3 +32,19 @@ ls - grep 'Test_2'
 cat $(ls | grep 'Test_1') >> tot.tx
 
 #K
+find . -maxdepth 1 -type f | wc -l
+
+#L
+ls > FileList.txt
+
+#M
+cp ~/a* ./
+
+#N
+rm $(ls ??)
+
+#O 
+rm $HOME/folder -r
+
+# P
+cd /

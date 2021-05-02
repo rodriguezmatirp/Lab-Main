@@ -2,11 +2,11 @@
 r =2;
 h =10;
 output = sarea(r,h)
-fprintf('surface area - %f\n ',output)
+fprintf('surface area = %f\n ',output)
 
 % 1 A ii
 [r,h] = heirad('2*h -20*r ==0',100)
-fprintf('radius - %f\n height - %f\n',r(2),h(2))
+fprintf('radius = %f\n height = %f\n',r(2),h(2))
 
 % 1 B
 x = linspace(-4, 4);
@@ -24,7 +24,7 @@ distribution = input('Enter the distribution - ', 's');
 if strcmp(lower(distribution),'binomial')
     n = input('Enter n -  ');
     p = input('Enter p - ');
-    fprintf('Mean: %f\n', n * p;
+    fprintf('Mean: %f\n', n * p);
     fprintf('Variance: %f\n', (n * p)) * (1 - p);
 
 elseif strcmp(lower(distribution),'geometric')
@@ -38,7 +38,6 @@ elseif strcmp(lower(distribution),'poisson')
     fprintf('Variance: %f\n', lambda);
 else
     fprintf('Illegal distribution input.\n')
-    
 end
 
 % 2 B
